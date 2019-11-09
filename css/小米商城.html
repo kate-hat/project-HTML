@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pic1/iconfont.css">
+    <link rel="stylesheet" href="./小米登录/iconfont.css">
+    <link rel="stylesheet" href="./pic2/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .top {
+            height: 40px;
+            width: 100%;
+            background: #333;
+            position: relative;
+        }
+
+        .top .header {
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+
+            font-size: 12px;
+        }
+
+        .top .header .header-left {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .header a {
+            color: #b0b0b0;
+            text-decoration: none;
+            line-height: 40px;
+        }
+
+        .header a:hover {
+            color: white;
+        }
+
+        .top .header span {
+            margin: 0 3.6px;
+            color: #b0b0b0;
+        }
+
+        .open .appcode {
+            position: absolute;
+            top: 28px;
+            width: 130px;
+            height: 150px;
+            background: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            display: none;
+            box-shadow: 0 1px 5px #aaa;
+            left: -40px;
+            z-index: 20;
+        }
+
+        .header .open:hover .appcode {
+            display: block;
+        }
+
+        .header .open:hover .three {
+            display: block;
+        }
+
+        .header .open {
+            transition: all 2s ease;
+            position: relative;
+        }
+
+        .header .open .three {
+            border: 8px solid;
+            border-color: transparent transparent #b0b0b0 transparent;
+            position: absolute;
+            left: 50%;
+            margin-left: -8px;
+            top: 12px;
+            display: none;
+        }
+
+        .header .open .download {
+            width: 90px;
+            height: 90px;
+            background-image: url("./小米登录/pic/download.png");
+            background-size: cover;
+            margin: 10px 20px;
+        }
+
+        .top .header .header-right {
+            position: relative;
+            float: right;
+            height: 40px;
+            line-height: 40px;
+
+        }
+
+        .top .header .header-cart {
+            float: right;
+            position: relative;
+            width: 120px;
+            height: 40px;
+            margin-left: 15px;
+            font-size: 13px;
+            color: #aaa;
+            background-color: #424242;
+        }
+
+        .header .header-cart .cart-open {
+            top: 40px;
+            width: 316px;
+            height: 80px;
+            line-height: 80px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+            position: absolute;
+            right: 0;
+            text-align: center;
+            display: inline-block;
+            font-size: 13px;
+            color: #333;
+            display: none;
+            background: #fff;
+            z-index: 50;
+        }
+
+        .header-right .header-cart:hover {
+            color: #ff6700;
+            background: papayawhip;
+        }
+
+        .header-cart .iconfont icon-cart:hover {
+            color: #ff6700;
+        }
+
+        .header-cart:hover .cart-open {
+            display: block;
+        }
+
+        .nose {
+            height: 100px;
+            background: white;
+            color: #333;
+        }
+
+        .nose .nose-contation {
+            margin-right: auto;
+            margin-left: auto;
+            height: 100px;
+            width: 1226px;
+            position: relative;
+        }
+
+        .nose .nose-left {
+            position: relative;
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+            margin-top: 22px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .nose .nose-left::after {
+            background-image: url("./mi-logo.png");
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            background-size: cover;
+            content: "";
+            transition: all .1s ease;
+
+        }
+
+        .nose .nose-left::before {
+            content: "";
+            background-image: url("./mi-home.png");
+            width: 55px;
+            height: 55px;
+            display: none;
+            position: absolute;
+            left: -55px;
+            transition: all .3s ease;
+            display: block;
+            background-repeat: no-repeat;
+
+        }
+
+        .nose .nose-logo:hover .nose-left::before {
+            left: 0;
+        }
+
+        .nose .nose-logo:hover .nose-left::after {
+            left: 55px;
+        }
+
+        .nose-left:hover .nose-left-open {
+            display: block;
+        }
+
+        .nose .nose-center {
+            width: 700px;
+            height: 100px;
+            padding: 0 30px;
+            list-style-type: none;
+            z-index: 10;
+            float: left;
+            font-size: 16px;
+            margin-left: 100px;
+            position: relative;
+        }
+
+        .nose-center .nose-ul li {
+            display: inline-block;
+            padding: 26px 10px 38px;
+
+        }
+
+        .nose-center .nose-ul .emmm {
+            width: 1225px;
+            height: 0;
+            background-image: url("./milogo2.png");
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+            margin-top: 55px;
+            margin-left: -300px;
+            position: absolute;
+            display: inline-block;
+            transition: all 0.5s ease;
+        }
+
+        .nose-ul li:hover .emmm {
+            height: 200px;
+
+        }
+
+        .nose-center .nose-ul li:hover {
+            color: #ff6700;
+            cursor: pointer;
+        }
+
+        .nose-right {
+            width: 296px;
+            height: 50px;
+            border: 1px solid #e0e0e0;
+            margin-top: 25px;
+            float: right;
+            outline: 0;
+        }
+
+        .nose-right span:hover {
+            border: #ff6700;
+            color: white;
+            background: #ff6700;
+        }
+
+        .nose-right .div1 {
+            border: none;
+            border-right: 1px solid #e0e0e0;
+            width: 220px;
+            height: 48px;
+            margin: 0 auto;
+            line-height: 50px;
+        }
+
+        .nose-right input {
+            line-height: 48px;
+        }
+
+        .nose-right span {
+            right: 0;
+            margin-left: 10px;
+            width: 52px;
+            height: 48px;
+            font-size: 24px;
+            background: #fff;
+            color: #616161;
+            float: right;
+            line-height: 48px;
+        }
+
+        .center {
+            position: relative;
+            width: 1226px;
+            height: 460px;
+            background-image: url("./mi.webp");
+            background-position: center;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        .center ul {
+            float: left;
+            padding: 0;
+            padding-top: 20px;
+            margin: 0;
+            background-color: rgba(0, 0, 0, .3);
+            width: 234px;
+            height: 440px;
+        }
+
+        .center li .item {
+            /* position: relative; */
+            display: block;
+            padding-left: 30px;
+            height: 42px;
+            line-height: 42px;
+            transition: all .5 ease;
+
+        }
+
+        .center li {
+            list-style: none;
+            color: #fff;
+            display: block;
+            padding-left: 30px;
+            height: 42px;
+            line-height: 42px;
+
+        }
+
+        .center .item:hover {
+            background: #ff6700;
+            cursor: pointer;
+
+        }
+
+        .center .item:hover .item-box {
+            display: block;
+        }
+
+        .center li .iconfont {
+            float: right;
+            margin-right: 20px;
+        }
+
+        .center .item .item-box {
+            height: 460px;
+            width: 992px;
+            background: #fff;
+            position: absolute;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+            right: 0;
+            top: 0;
+            display: none;
+
+        }
+
+        .item .item-box a {
+            padding: 20px 50px;
+            text-decoration: none;
+            display: inline-block;
+            color: #616161;
+            font-size: 15px;
+        }
+
+        .item .item-box img {
+
+            vertical-align: middle;
+        }
+
+        .item .item-box a:hover {
+            color: #ff6700;
+            cursor: pointer;
+        }
+
+        .footer {
+            width: 1226px;
+            height: 170px;
+            margin: 0 auto;
+            margin-top: 14px;
+            display: block;
+            position: relative;
+        }
+
+        .footer .footer-a {
+            width: 234px;
+            height: 170px;
+            background: #5f5750;
+            float: left;
+            position: absolute;
+        }
+
+        .footer .footer-a li {
+            position: relative;
+            display: block;
+            color: #fff;
+            opacity: .7;
+            float: left;
+            width: 70px;
+            height: 82px;
+            padding: 0 3px;
+            margin: 10px auto 0;
+        }
+        .footer .footer-a ul {
+            list-style-type: none;
+            font-size: 12px;
+            text-align: center;
+            display: block;
+            position: absolute;
+        }
+
+        .footer .footer-a li::before {
+            width: 64px;
+            height: 1px;
+            position: absolute;
+            content: "";
+            background: #665e57;
+            top: -1px;
+            left: 6px;
+            overflow: hidden;
+        }
+
+        .footer .footer-a li::after {
+            content: "";
+            top: -2px;
+            left: 0;
+            width: 1px;
+            height: 70px;
+            background: #665e57;
+            position: absolute;
+        }
+
+        .footer .box-b {
+            width: 978px;
+            height: 170px;
+            margin-left: 249px;
+            margin-right: 10px;
+        }
+
+        .footer .footer-b li {
+            list-style: none;
+            display: block;
+        }
+
+        .footer-b li:last-child {
+            margin-right: 0px;
+            padding-right: 0;
+        }
+
+        .footer ul img {
+            display: block;
+            width: 315px;
+            height: 170px;
+            float: left;
+            padding-left: 11px;
+
+        }
+
+        .ground {
+            height: 1519px;
+            background: #f5f5f5;
+            margin-top: 14px;
+
+        }
+
+        .ground .gr-box {
+            width: 1230px;
+            height: 50px;
+            position: relative;
+            margin: 0 auto;
+
+        }
+
+        .ground .gr-top {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 58px;
+            color: #333;
+            float: left;
+        }
+
+        .ground .gr-box span {
+            float: right;
+            right: 1px;
+            width: 24px;
+            height: 16px;
+            margin-top: 15px;
+        }
+
+        .ground .iconfont {
+            border: 1px solid #e0e0e0;
+            padding: 3px 5px;
+            text-align: center;
+        }
+
+        .ground .gr-center {
+            position: relative;
+            margin-top: 40px;
+            width: 1230px;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        .ground .gr-center .gr-left {
+            width: 234px;
+            height: 310px;
+            position: absolute;
+            background: #f1eded;
+            border-top: 1px solid red;
+            padding-top: 40px;
+            border-top-width: 1px;
+            border-top-style: solid;
+            text-align: center;
+        }
+
+        .gr-center .gr-left .left-1 {
+            font-size: 21px;
+            color: #ef3a3b;
+            padding-top: 15px;
+
+        }
+
+        .gr-left .left-2 {
+            padding: 20px 0;
+        }
+
+        .gr-left .left-3 {
+            color: rgba(0, 0, 0, .54);
+            font-size: 15px;
+            padding-top: 10px;
+        }
+
+        .gr-left .left-4 {
+            width: 168px;
+            margin: 28px auto 0;
+        }
+
+        .left-4 span {
+            width: 46px;
+            height: 46px;
+            background: #605751;
+            color: #fff;
+            font-size: 24px;
+            line-height: 46px;
+            float: left;
+        }
+
+        .left-4 i {
+
+            width: 15px;
+            float: left;
+            height: 46px;
+            line-height: 46px;
+            color: #605751;
+            font-size: 28px;
+            font-style: normal;
+        }
+
+        .gr-center .gr-right {
+            margin-left: 250px;
+            margin-top: 40px;
+            width: 1000px;
+            display: block;
+        }
+
+        .gr-right ul {
+            list-style: none;
+           
+        }
+
+        .gr-center .gr-right .img-bar {
+            width: 234px;
+            height: 349px;
+            border-top: 1px solid blue;
+            float: left;
+            margin-left: 12px;
+            background: white;
+        }
+
+        .gr-right .img-bar img {
+            width: 160px;
+            height: 150px;
+            margin: 0 auto;
+            display: block;
+            margin-top: 30px;
+        }
+
+        .gr-right li {
+            text-align: center;
+            
+        }
+
+        .gr-right li p {
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            margin: 0 20px 3px;
+            padding-top: 50px;
+        }
+
+        .gr-right span {
+            /* padding-top: 10px; */
+            height: 18px;
+            display: block;
+            margin: 10px 20px 12px;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            color: #b0b0b0;
+        }
+
+        .gr-right .img-num {
+            margin-top: 20px;
+        }
+
+        .img-num h {
+            color: #ff6709;
+        }
+
+        .gr-right li del {
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="header">
+            <div class="header-left">
+                <a href="">小米商城</a>
+                <span>|</span>
+                <a href=""> MIUI </a>
+                <span>|</span>
+                <a href=""> IoT</a>
+                <span>|</span>
+                <a href=""> 云服务 </a>
+                <span>|</span>
+                <a href=""> 金融</a>
+                <span>|</span>
+                <a href=""> 有品 </a>
+                <span>|</span>
+                <a href=""> 小爱开放平台 </a>
+                <span>|</span>
+                <a href=""> 企业团购</a>
+                <span>|</span>
+                <a href=""> 资质证照 </a>
+                <span>|</span>
+                <a href=""> 协议规则 </a>
+                <span>|</span>
+                <a href="" class="open">下载app
+                    <span class="three"></span>
+                    <span class="appcode">
+                        <div class="download"></div>
+                        小米商城APP
+                    </span></a>
+                <span>|</span>
+                <a href=""> Select Location</a>
+            </div>
+            <div class="header-right">
+
+                <a href="">登录</a>
+                <span>|</span>
+                <a href="">注册</a>
+                <span>|</span>
+                <a href="">消息通知</a>
+
+                <div class="header-cart">
+                    <span class="iconfont icon-cart"></span>
+                    购物车（0）
+                    <div class="cart-open">
+                        购物车中还没有商品，赶紧选购吧！
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nose">
+        <div class="nose-contation">
+            <div class="nose-logo">
+                <div class="nose-left"></div>
+            </div>
+            <div class="nose-center">
+                <ul class="nose-ul">
+                    <li>
+                        小米手机
+                        <div class="emmm"></div>
+                    </li>
+                    <li>Redmi 红米</li>
+                    <li>电视</li>
+                    <li>笔记本</li>
+                    <li>家电</li>
+                    <li>路由器</li>
+                    <li>智能硬件</li>
+                    <li>服务</li>
+                    <li>社区</li>
+                </ul>
+            </div>
+            <div class="nose-right">
+                <input class="div1" placeholder="小米9 pro 5G">
+                <span class="iconfont icon-Magnifier"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="center">
+        <ul>
+            <li class="item">手机 电话卡<span class="iconfont icon-next"></span>
+                <div class="item-box">
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a><br>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a><br>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a><br>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a><br>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a>
+                    <a href=""><img src="./r.webp"> <span>Redmi 8A</span></a><br>
+
+
+                </div>
+            </li>
+            <li class="item">电视 盒子<span class="iconfont icon-next"></span></li>
+            <li class="item">笔记本 平板<span class="iconfont icon-next"></span></li>
+            <li class="item">家电 插线板<span class="iconfont icon-next"></span></li>
+            <li class="item">出行 穿戴<span class="iconfont icon-next"></span></li>
+            <li class="item">智能路由器<span class="iconfont icon-next"></span></li>
+            <li class="item">电源配件<span class="iconfont icon-next"></span></li>
+            <li class="item">儿童 健康<span class="iconfont icon-next"></span></li>
+            <li class="item">耳机 音响<span class="iconfont icon-next"></span></li>
+            <li class="item">生活 箱包<span class="iconfont icon-next"></span></li>
+        </ul>
+
+    </div>
+    <div class="footer">
+        <div class="footer-a clearfix">
+            <ul>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li><br>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li>
+                <li><span class="iconfont icon-Magnifier"></span>
+                    <p>小米秒杀</p>
+                </li>
+            </ul>
+        </div>
+        <div class="box-b clearfix">
+            <ul class="footer-b clearfix">
+                <li class="box1"> <img src="./footer.jpg" alt=""></li>
+                <li class="box2"> <img src="./footer.jpg" alt=""></li>
+                <li class="box3"> <img src="./footer.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class=" ground clearfix">
+        <div class="gr-box ">
+            <div class="gr-top clearfix">小米闪购</div>
+            <div class="gr-coin1"><span class="iconfont icon-next"></span></div>
+            <div class="gr-coin2"><span class="iconfont icon-next"></span></div>
+        </div>
+        <div class="gr-center">
+            <div class="gr-left clearfix">
+                <div class="left-1">10:00场</div>
+                <div class="left-2"> <img src="data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAA1CAYAAAAklDnhAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+                        bWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+                        bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+                        eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1
+                        MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+                        dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+                        dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv
+                        IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS
+                        ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD
+                        cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5j
+                        ZUlEPSJ4bXAuaWlkOjY4Q0ZFMkY5MTJFNzExRThCMkM4OEM1RTNBNjczQUVBIiB4bXBNTTpEb2N1
+                        bWVudElEPSJ4bXAuZGlkOjY4Q0ZFMkZBMTJFNzExRThCMkM4OEM1RTNBNjczQUVBIj4gPHhtcE1N
+                        OkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjhDRkUyRjcxMkU3MTFFOEIy
+                        Qzg4QzVFM0E2NzNBRUEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjhDRkUyRjgxMkU3MTFF
+                        OEIyQzg4QzVFM0E2NzNBRUEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94Onht
+                        cG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5oEyacAAACoklEQVR42sSYv0tbURTHX0LqD6T4g4pE
+                        cHDoUOloBxVd/QFFEcQqWtrSKlKFmmAslopohzgIbv4FwUEE0clFujiIi+BSIbRQ0ooKRReRULHf
+                        S48Qgu++c3/FAx+iyU3eJzf3nnPuC/1qavQ04zVY8szjCHRGNN9cBD6DSkOJKzAGzsOaH/AW1FuY
+                        jRg4EH/oiJSCTxYk1sDK7T86Iu9BraHED/Au9wlVkYdg2lAiC/rBhYnIB/DIUOQj2M9/UkWkCsQN
+                        JbbA8l0vqIhMgXIDiZ/gFbgxEakBEwYSf8Eg+OM3gCsyA8oMRETy25UN4IjUgVEDiW2wGDSIIzIL
+                        ijUljsFLv3WhIvKYFphOXNO6OOUMDhKZA7qFcQF85Q6WXeQpeKEpcULlvY8xthp8iwR8I93qLLb7
+                        KnOsSPWNfhd6Bro99yHqTi9IhyWzEXIsIXbSG7Djt1jbQHsBZkMkyZRs13wpgIRoiJKy7dsBWh1L
+                        bN5Vt3JFQrQ2XMYeGKBk5yvSI7aRQ4k0eA4uZZlVPM47lDgTZxd6lKb4AcqkLuKSZiIdVGsiVFNc
+                        xDV9yT1Orekjoe+MDw4pHqwmaJewit66Ql0QaX+DOTaZe4DitAFZxQaaEynKnJ6KCDeaQAtj3A7V
+                        kBtXIpwT3iFV06zqquaKPKEtKIsM6Mo/StoWiQeMvSCJjO4+54hEwTCjuTk0STgckUm6QxTY3LgU
+                        Kc+/jyFrblyKCIkKbnPjSkT8HDGV5saVyBAtVHZz40Ik7HNTRtrcuBARF2tQbW5ciCR0mhvbIs2E
+                        cnNjWySh29zYFGnIK25KzY1Nkdziptzc2BKJUu7Qbm5sicQom2o3NzZEKqiu/DZpbmyIjIAHNBMZ
+                        7x4iTALjhcgVQSIl3v87w5vePcY/AQYAFYR6skFSqBUAAAAASUVORK5CYII=" alt="小米闪购"></div>
+                <div class="left-3">距离结束还有</div>
+                <div class="left-4">
+                    <span>01</span>
+                    <i>:</i>
+                    <span>00</span>
+                    <i>:</i>
+                    <span>00</span>
+                </div>
+            </div>
+            <div class="gr-right clearfix">
+                <ul class="clearfix">
+                    <li class="img-bar clearfix">
+                        <img src="./footer.jpg" alt="">
+                        <p>Redmi全自动波轮洗衣机1S 8kg 灰色</p>
+                        <span>一键操作，父母都爱</span>
+                        <div class="img-num">
+                            <h>699</h>
+                            <del>799</del>
+                        </div>
+
+                    </li>
+
+                    <li class="img-bar clearfix">
+                        <img src="./footer.jpg" alt="">
+                        <p>Redmi全自动波轮洗衣机1S 8kg 灰色</p>
+                        <span>一键操作，父母都爱</span>
+                        <div class="img-num">
+                            <h>699</h>
+                            <del>799</del>
+                        </div>
+
+                    </li>
+                    <li class="img-bar clearfix">
+                        <img src="./footer.jpg" alt="">
+                        <p>Redmi全自动波轮洗衣机1S 8kg 灰色</p>
+                        <span>一键操作，父母都爱</span>
+                        <div class="img-num">
+                            <h>699</h>
+                            <del>799</del>
+                        </div>
+
+                    </li>
+                    <li class="img-bar clearfix">
+                        <img src="./footer.jpg" alt="">
+                        <p>Redmi全自动波轮洗衣机1S 8kg 灰色</p>
+                        <span>一键操作，父母都爱</span>
+                        <div class="img-num">
+                            <h>699</h>
+                            <del>799</del>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- <div><img src="./footer.jpg" alt=""></div>
+                <div><img src="./footer.jpg" alt=""></div>
+                <div><img src="./footer.jpg" alt=""></div>
+            </div> -->
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

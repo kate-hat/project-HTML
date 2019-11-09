@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .center {
+            background-image: url("./1.jpg");
+            width: 100%;
+            height: 588px;
+            background-position: top center;
+            top: 98px;
+        }
+
+        .tab {
+            width: 1130px;
+            margin: 0 auto;
+            padding: 50px;
+
+        }
+
+        .whole {
+            width: 410px;
+            height: 556px;
+
+            background: white;
+            float: right;
+            padding: 27px 0;
+
+        }
+
+        .up {
+            text-align: center;
+            padding: 27px 0 24px;
+            font-size: 24px;
+            color: #666;
+        }
+
+        .a1 {
+            color: #f56600;
+        }
+
+        .act {
+            width: 1px;
+            height: 24px;
+            margin: 0 35px 0 42px;
+            border: 1px solid #e0e0e0;
+            display: inline-block;
+        }
+
+        .whole .kuang {
+            height: 22px;
+            line-height: 22px;
+            padding: 13px 16px 13px 14px;
+            display: block;
+        }
+
+        .kuang .box {
+            margin-bottom: 14px;
+            /* border: 1px solid #e0e0e0; */
+        }
+
+        .text {
+            height: 22px;
+            line-height: 22px;
+            padding: 13px 210px 13px 14px;
+            display: block;
+        }
+
+        #wu {
+            margin: 20px 0;
+        }
+
+
+        input {
+            outline: none;
+        }
+
+        .sub input {
+            background-color: #ff6700;
+            width: 383px;
+            height: 50px;
+            line-height: 50px;
+            display: block;
+            margin-bottom: 14px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .down a {
+            margin-left: 0;
+            font-size: 14px;
+            color: #ff6700;
+            text-decoration: none;
+
+        }
+
+        .down .zuo {
+            width: 160px;
+            float: right;
+        }
+
+        .zuo span {
+            padding: 0 10px;
+        }
+
+        .down .zuo a {
+            display: inline;
+            color: #999;
+        }
+
+        .down .zuo a:hover {
+            color: #ff6700;
+        }
+
+        .footer {
+            width: 1130px;
+            padding: 0px;
+            position: absolute;
+            /* bottom: 0; */
+        }
+
+        .footer ul,
+        p {
+            text-align: center;
+            /* display: inline-block; */
+
+            color: #757575;
+            padding: 10px;
+        }
+
+        .footer li:hover {
+            color: #333;
+            cursor: pointer;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 10px;
+
+        }
+
+        fieldset {
+            border: 0;
+            border-top: 1px solid #999;
+            text-align: center;
+            margin-top: 65px;
+            color: #bbb;
+        }
+
+        p {
+            text-align: center;
+            }
+        .pic-box{
+            width: 348px;
+            height: 37px;
+            padding: 3px 0 0 ;
+            text-align: center;
+        }
+        .pic-c{
+            padding: ;
+        }
+        .pic-c li{
+           
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border-radius: 50%;
+           list-style: none;
+          margin: 0 15px;
+        }
+
+       
+        .pic-c li:nth-child(1){
+            background-color: #0288d1;
+            
+            }
+        .pic-c li:nth-child(2){
+            background-color: #d32f2f;
+            background-position: -38px 0;
+        }
+        .pic-c li:nth-child(3){
+            background: #0ae;
+            background-position: -76px 0;
+        }
+        .pic-c li:nth-child(4){
+            background: #00d20d;
+            background-position: -152px 0;
+        } 
+        .pic-c li i{
+            width: 18px;
+            height: 18px; 
+            background-image: url("./n.png");
+            margin: 0 auto;
+        }
+        .pic-c li:nth-child(1) i{
+            background-position: -19px 0;
+        }
+        .pic-c li:nth-child(2) i{
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="center">
+        <div class="tab">
+            <div class="whole">
+                <div class="up">
+                    <a class="a1">账号登录</a>
+                    <span class="act"></span>
+                    <a>扫码登录</a>
+                </div>
+                <div class="kuang">
+                    <div class="box">
+                        <input class="text" placeholder="邮箱/手机账号/小米id">
+
+                        <input class="text" id="wu" placeholder="密码">
+                    </div>
+
+                    <div class="sub">
+                        <input type="text" value="登录">
+                    </div>
+                    <div class="down">
+                        <a href>手机短信注册登录/注册</a>
+                        <div class="zuo">
+                            <a href>立即注册</a>
+                            <span class="i">|</span>
+                            <a href>忘记密码？</a>
+                        </div>
+                    </div>
+                        <fieldset>
+                            <legend>其它方式登录</legend>
+                        </fieldset>
+                        <div class="pic-box">
+                             <ul class="pic-c">
+                             <li>
+                                 <i></i>
+                             </li>
+                             <li>
+                                 <i></i>
+                             </li> 
+                            <li>
+                                <i></i>
+                            </li> 
+                            <li>
+                                <i></i>
+                            </li>
+                            
+                        </ul>
+                        </div>
+                           
+                        
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="link-area">
+            <ul>
+                <li><span>简体</span> |</li>
+                <li><span>繁体</span> |</li>
+                <li><span>English</span> |</li>
+                <li><span>常见问题</span> |</li>
+                <li><span>隐私政策</span> </li>
+            </ul>
+            <p>小米公司版权所有-京ICP备10046444</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

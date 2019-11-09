@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .div1{
+        height:100px;
+        width: 100px;
+        background: olive;
+        transition:all 2s ease;
+    }
+    .div1:hover{
+        height: 400px;
+        width: 400px;
+        background: orange;
+    }
+    .div2{
+        font-size: 20px;
+        color: orangered;
+        display:none;
+    }
+    .div1:hover .div2{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">hello</div>
+    </div>
+</body>
+</html>
