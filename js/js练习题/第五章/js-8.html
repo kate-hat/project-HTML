@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    	// 编写函数，用下面的公式计算π的近似值。
+        // 在页面上输出当n=100，500，1000，10000时π的近似值。
+        function foo(temp){
+            var temp;
+            var sum=0;
+            for(var n=0;n<temp;n++){
+                sum= sum+Math.pow(-1,n-1)*(1/(2*n-1));
+            }
+            return sum*4;
+           
+        }
+       console.log("p="+foo(100));
+       console.log("p="+foo(500));
+       console.log("p="+foo(1000));
+       
+       
+       
+    </script>
+</body>
+</html>

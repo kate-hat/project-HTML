@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .box{
+        width: 700px;
+        border: 1px solid black;
+        margin: 200px auto;
+    }
+    .box .top{
+        width:700px ;
+        height: 50px;
+        background-color: black;
+    }
+    li{
+        list-style: none;
+        
+    }
+    .top li{
+        display: inline-block;
+        color: white;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+    .bottom{
+        width: 700px;
+    }
+    .bottom li{
+        padding-left: 10px;
+    }
+    .bottom .active{
+        display: block;
+    }
+    .top .active{
+        background-color: #ddd;
+        color: #000;
+    }
+    .item{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <ul>
+                <li class="active">第一节课</li>
+                <li>第二节课</li>
+                <li>第三节课</li>
+            </ul>
+        </div>
+        <div class="bottom">
+           <div class="item active">
+               <ul>
+                <li >第一节课内容</li>
+                <li>第一节课内容</li>
+                <li>第一节课内容</li>
+               </ul>
+           </div>
+           <div class="item">
+            <ul>
+                <li>第二节课内容</li>
+                <li>第二节课内容</li>
+                <li>第二节课内容</li>
+              </ul>
+           </div>
+           <div class="item">
+            <ul>
+                <li>第三节课内容</li>
+                <li>第三节课内容</li>
+                <li>第三节课内容</li>
+              </ul>
+           </div>
+        </div>
+    </div>
+    <script>
+    var bli=document.getElementsByClassName("top")[0].getElementsByTagName("li");
+    var aBot=document.getElementsByClassName("item");
+   for(var i=0;i<bli.length;i++){
+       bli[i].hp=i;
+       bli[i].onmouseover=function(){
+           for(var j=0;j<bli.length;j++){
+                bli[j].className="";
+                aBot[j].classList.remove("active");
+           }
+           this.className="active";
+           aBot[this.hp].classList.add("active");
+       }
+   }
+    </script>
+</body>
+</html>

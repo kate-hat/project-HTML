@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 1.	编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。 -->
+    <script>
+        var num= prompt("请输入数值");
+        console.log(Math.pow(num,2));
+        console.log(Math.sqrt(num));
+        console.log(Math.log(num));
+        // 2.	使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数。
+        var num=Math.random()*101;
+        console.log(Math.floor(num));
+        
+        // 3.	设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！“。
+        var d=new Date();
+        
+        document.write("现在是"+d.getUTCFullYear()+"年"+d.getUTCMonth()+"月"+d.getUTCDay()+"日"+d.getUTCHours()+"点"+d.getUTCMinute()+"分"+d.getUTCSecond()+"秒");
+        
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 编写一个非递归函数factorial(n)，计算12!-10!的结果。
+    // function foo(n){
+    //     var num=1;
+    //     for (var i=1;i<=n;i++){
+    //         num*=i
+    //     }
+    //     return num;
+    // }
+    // console.log(foo(12)-foo(10));
+    // 编写一个带一个参数
+    // （指定显示多少层星号“*”的函数，它在页面止输出的一个5层星号“*”图案类似。
+    function foo(n){
+        for(var i=1;i<=n;i++){
+            for(var k=n;k>=i;k--){
+                document.write("&nbsp");
+            }
+            for(var j=1;j<=i;j++){
+                document.write("*&nbsp");
+            }
+            document.write("<br/>");
+        }
+    }
+    foo(5)
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 1038px;
+            height: 650px;
+            background: rgb(32, 131, 32);
+            margin: 0 auto;
+            position: relative;
+        }
+        #map-panel{
+            width: 631px;
+            height: 421px;
+            background: #e0e0e0;
+            position: absolute;
+            left: 90px;
+            top: 140px;
+        }
+        #map-bg table{
+            border-collapse: collapse;
+        }
+        #map-bg td{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #888;
+        }
+        .snake{
+            width: 20px;
+            height: 20px;
+            background: rgb(0,255,255);
+        }
+        .food{
+            width: 20px;
+            height: 20px;
+            background: rgb(255,255,0);
+        }
+        #contoel-panel{
+            width: 196px;
+            height: 500px;
+            position: absolute;
+            left: 800px;
+            top: 100px;
+            text-align: center;
+        }
+        #contoel-panel button{
+            width: 178px;
+            height: 52px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            background: yellow;
+            border: 1px solid yellow;
+            border-radius: 15%;
+        }
+        #speed-panel{
+            width: 196px;
+            height: 204px;
+            text-align: center;
+            background: yellow;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="map-panel">
+            <table id="map-bg">
+                <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                </tr>
+            </table>
+            <div class="snake"></div>
+            <div class="snake"></div>
+            <div class="snake"></div>
+            <div class="food"></div>
+        </div>
+        <div id="contoel-panel">
+            <button id="btn-start">开始游戏</button>
+            <button>游戏设置</button>
+            <button>退出游戏</button>
+            <button>帮助</button>
+            <div id="speed-panel">速度</div>
+        </div>
+    </div>
+</body>
+</html>

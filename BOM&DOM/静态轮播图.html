@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 800px;
+            height: 300px;
+            float: left;
+            display: none;
+        }
+
+        .swiper {
+            width: 800px;
+            height: 50px;
+            bottom: 0;
+        }
+
+        .left ul {
+            display: inline-block;
+            list-style: none;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            margin: 0 auto;
+        }
+
+        .left li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: yellow;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .right {
+            width: 100px;
+            text-align: center;
+        }
+
+        .right ul {
+            display: inline-block;
+            list-style: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .item {
+            float: left;
+            background: yellow;
+            color: #e0e0e0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .active {
+            display: block;
+        }
+        .act{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="pic">
+            <img class="active" src="./img/link.jpg" alt="">
+            <img src="./img/link1.jpg" alt="">
+            <img src="./img/link3.jpg" alt="">
+            <img src="./img/lin2.jpg" alt="">
+            <img src="./img/link5.jpg" alt="">
+        </div>
+        <div class="swiper">
+            <div class="left">
+                <ul>
+                    <li class="a">&lt;</li>
+                    <li class="b">&gt;</li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class="item act">1</li>
+                    <li class="item">2</li>
+                    <li class="item">3</li>
+                    <li class="item">4</li>
+                    <li class="item">5</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var aPic = document.getElementsByTagName("img");
+        var bIte = document.getElementsByClassName("item");
+        var Right = document.getElementsByClassName("b")[0];
+        var Left=document.getElementsByClassName("a")[0];
+        var obox=document.getElementsByClassName("box")[0];
+        var nowIndex=0;
+        var timer=null;
+        function cheage(index){
+            nowIndex=index;
+             for (var j = 0; j < aPic.length; j++) {
+                    aPic[j].classList.remove("active");
+                    bIte[j].classList.remove("act");
+                }
+                bIte[index].classList.add("act");
+                aPic[index].classList.add("active");
+        }
+        
+        for (var i = 0; i < bIte.length; i++) {
+            bIte[i].index = i;
+            bIte[i].onmouseover=function(){
+                cheage(this.index)
+            }
+        }
+
+        Right.onclick=function(){
+            ++nowIndex;
+            if(nowIndex==5){
+                nowIndex=0;
+            }
+            cheage(nowIndex); 
+        }
+
+        Left.onclick=function(){
+            --nowIndex;
+            if(nowIndex==-1){
+                nowIndex=4
+            }
+            cheage(nowIndex)
+        }
+
+        function play(){
+            timer=setInterval(function(){
+                ++nowIndex;
+            if(nowIndex==5){
+                nowIndex=0;
+            }
+            cheage(nowIndex); 
+            },1000)
+        }
+
+        obox.onmouseover=function(){
+            clearInterval(timer)
+        }
+
+        obox.onmouseout=function(){
+            play()
+        }
+        play();
+
+         
+    </script>
+</body>
+
+</html>
